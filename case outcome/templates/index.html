@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Outcome Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Case Outcome Predictor</h1>
+        <form method="post" action="/predict">
+            <label for="case_type">Case Type:</label>
+            <input type="text" name="case_type" required>
+
+            <label for="evidence_volume">Evidence Volume:</label>
+            <select name="evidence_volume" required>
+                <option value="Select">Select</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+
+            <label for="num_parties">No. of Parties:</label>
+            <input type="number" name="num_parties" required>
+
+
+            <label for="case_complexity">Case Complexity:</label>
+<!--            <input type="text" name="case_complexity" required>-->
+            <select name="case_complexity" required>
+                <option value="Select">Select</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
